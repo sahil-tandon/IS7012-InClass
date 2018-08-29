@@ -1,0 +1,45 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<!--
+
+    Type the following url format into your browser to add your name to the list:
+
+    https://is7012.azurewebsites.net/?name=[UC Username]
+
+    e.g.
+
+    https://is7012.azurewebsites.net/?name=exampleab
+
+
+    Only letters and numbers are allowed and length has to be between 2-8 characters
+-->
+
+<h1 class="text-center">Welcome to IS 7012</h1>
+<hr />
+<div class="col-md-6">
+    <div class="panel panel-primary">
+        <div class="panel-body panel-primary">
+            <h4>"Fun" "Hacker" "Assignment"</h4>
+            <p>Visit this site and see if you can add your name to the list on the right</p>
+            <p>https://is7012.azurewebsites.net</p>
+            <img src="~/images/tenor.gif" alt="" class="text-center" style="margin: auto; width: 50%;" />
+        </div>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="panel panel-success">
+        <div class="panel-body panel-success">
+            <h4>Todays "Hackers"</h4>
+            <ul>
+                @foreach (var item in Model.Names)
+                {
+                    <li>@item</li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
