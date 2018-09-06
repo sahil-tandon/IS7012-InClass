@@ -36,7 +36,7 @@ namespace HealthDeptApp.Pages.Establishments
             {
                 return NotFound();
             }
-           ViewData["CategoryId"] = new SelectList(_context.Set<Category>(), "Id", "Id");
+           ViewData["CategoryId"] = new SelectList(_context.Set<Category>(), "Id", "Name");
             return Page();
         }
 
