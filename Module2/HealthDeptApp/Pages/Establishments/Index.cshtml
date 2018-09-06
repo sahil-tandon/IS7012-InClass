@@ -1,0 +1,66 @@
+@page
+@model HealthDeptApp.Pages.Establishments.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Establishment[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Establishment[0].Score)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Establishment[0].HasLiquorLicense)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Establishment[0].OpenDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Establishment[0].ClosedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Establishment[0].Category)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Establishment) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Score)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HasLiquorLicense)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OpenDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClosedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.Id)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
